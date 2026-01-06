@@ -12,13 +12,10 @@ export default function PostList() {
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch("https://jsonplaceholder.typicode.com/posts?_limit=5")
       .then((response) => response.json())
       .then((json) => setPosts(json as Post[]));
-  },[]);
-
-
-
+  }, []);
 
   return (
     <ul className="space-y-4">
